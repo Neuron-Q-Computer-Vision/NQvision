@@ -1,0 +1,10 @@
+numpy
+opencv-python
+Pillow
+deep_sort_realtime
+numba
+torch
+torchvision
+vidgear
+numba
+onnxruntime
