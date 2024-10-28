@@ -66,18 +66,22 @@ NQvision is a powerful library built around Ultralytics models in ONNX format, d
 
 To install NQvision Dependencies, follow these steps:
 
-- Install NQvision requirements found in ‘requirements.txt’:
+- Install NQvision :
 
 ```bash
-pip install -r requirements.txt
+pip install NQvision
 ```
 
 - install onnxruntime :
+
   - For cpu only inference :
+
   ```bash
   pip install onnxruntime
   ```
+
   - For gpu accelerated inference
+
   ```bash
   pip install onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
 
