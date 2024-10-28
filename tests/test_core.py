@@ -5,15 +5,15 @@ import numpy as np
 from PIL import Image
 
 # Update this import to match your actual module name
-from argus.core import ARGUSCore, ModelConfig, DetectionResult
+from NQvision.core import NQvisionCore, ModelConfig, DetectionResult
 
 
-class TestARGUSCore(unittest.TestCase):
+class TestNQvisionCore(unittest.TestCase):
     @patch("onnxruntime.InferenceSession")
     def setUp(self, mock_session):
         self.mock_session = mock_session
         self.config = ModelConfig()
-        self.detector = ARGUSCore("./models/argus/cpu/argus.onnx", self.config)
+        self.detector = NQvisionCore("./path/to/onnx/model.onnx", self.config)
 
     def test_preprocess_image(self):
         # Create a dummy image for testing
@@ -27,7 +27,7 @@ class TestARGUSCore(unittest.TestCase):
         self.assertIsInstance(original, Image.Image)
 
     # Update patch path to match your import
-    @patch("nq_argus.ARGUSCore.run_inference")
+    @patch("nq_argus.NQvisionCore.run_inference")
     def test_process_output(self, mock_inference):
         # Mock inference output
         mock_output = np.array(
@@ -45,8 +45,8 @@ class TestARGUSCore(unittest.TestCase):
             self.detector.process_image("./test/nonexistent_image.jpg")
 
     # Update patch paths to match your import
-    @patch("nq_argus.ARGUSCore.run_inference")
-    @patch("nq_argus.ARGUSCore.preprocess_image")
+    @patch("nq_argus.NQvisionCore.run_inference")
+    @patch("nq_argus.NQvisionCore.preprocess_image")
     def test_process_image(self, mock_preprocess, mock_inference):
         # Mock the preprocessing and inference
         mock_preprocess.return_value = (

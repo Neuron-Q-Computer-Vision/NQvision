@@ -57,7 +57,7 @@ class TrackedObject:
     confidence: float
 
 
-class ARGUSCore:
+class NQvisionCore:
     def __init__(self, model_path: str, config: ModelConfig = ModelConfig()):
         self.config = config
         self.model = self._load_model(model_path)
@@ -274,7 +274,6 @@ class ARGUSCore:
             )
         return img_copy
 
-    # @numba.jit(nopython=True)
     def _preprocess_frame(self, frame: np.ndarray) -> np.ndarray:
         """
         Preprocess a frame for inference.

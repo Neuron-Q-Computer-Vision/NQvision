@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import logging
 
 import numpy as np
-from argus.core import ARGUSCore, ModelConfig, TrackedObject
+from NQvision.core import NQvisionCore, ModelConfig, TrackedObject
 from PIL import Image
 
 
@@ -45,7 +45,7 @@ class EventStreamConfig:
                 )
 
 
-class EventStreamARGUSCore(ARGUSCore):
+class EventStreamNQvisionCore(NQvisionCore):
     def __init__(self, model_path: str, config: ModelConfig = ModelConfig()):
         super().__init__(model_path, config)
         self.event_stream_config = EventStreamConfig()

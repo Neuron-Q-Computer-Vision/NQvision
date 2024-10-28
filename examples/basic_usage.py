@@ -2,8 +2,8 @@
 import cv2
 from vidgear.gears import VideoGear
 
-from argus.core import ARGUSCore, ModelConfig, TrackerConfig
-from argus.events import DetectionEvent, EventStreamARGUSCore
+from NQvision.core import NQvisionCore, ModelConfig, TrackerConfig
+from NQvision.events import DetectionEvent, EventStreamNQvisionCore
 
 
 def VideoDetection():
@@ -12,7 +12,7 @@ def VideoDetection():
             max_age=10, high_confidence_threshold=0.8, min_confidance=0.2
         )
     )
-    detector = ARGUSCore("./models/argus/cpu/argus.onnx", config)
+    detector = NQvisionCore("path/to/onnx/model.onnx", config)
 
     # Example of processing a single image
     image_path = "./test/wpn_onnx_test.jpg"
@@ -43,7 +43,7 @@ def VideoDetection():
 import asyncio
 import cv2
 
-# from argus_event_stream import EventStreamARGUSCore, ModelConfig, DetectionEvent
+# from argus_event_stream import EventStreamNQvisionCore, ModelConfig, DetectionEvent
 
 
 async def example_callback(event: DetectionEvent):
@@ -55,9 +55,9 @@ async def example_callback(event: DetectionEvent):
 
 async def process_video_with_events():
     # Initialize
-    model_path = "./models/argus/cpu/argus.onnx"
+    model_path = "./test/wpn_onnx_test.jpg"
     config = ModelConfig(enable_tracker=True)
-    detector = EventStreamARGUSCore(model_path, config)
+    detector = EventStreamNQvisionCore(model_path, config)
 
     # Configure event stream
     detector.configure_event_stream(

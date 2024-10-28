@@ -4,16 +4,16 @@ import asyncio
 from datetime import datetime, timedelta
 import numpy as np
 from pathlib import Path
-from argus.events import EventStreamARGUSCore, EventStreamConfig, DetectionEvent
-from argus.core import ModelConfig, TrackedObject
+from NQvision.events import EventStreamNQvisionCore, EventStreamConfig, DetectionEvent
+from NQvision.core import ModelConfig, TrackedObject
 
 
-class TestEventStreamARGUSCore(unittest.TestCase):
+class TestEventStreamNQvisionCore(unittest.TestCase):
     def setUp(self):
         self.model_path = "dummy_model_path.onnx"
-        with patch("events.ARGUSCore.__init__") as mock_init:
+        with patch("events.NQvisionCore.__init__") as mock_init:
             mock_init.return_value = None
-            self.core = EventStreamARGUSCore(self.model_path)
+            self.core = EventStreamNQvisionCore(self.model_path)
             self.core.event_callbacks = []
             self.core.last_emitted = {}
             self.core.detection_frequency = {}
@@ -105,7 +105,7 @@ class TestEventStreamARGUSCore(unittest.TestCase):
         callback2.assert_called_once_with(event)
         self.assertEqual(self.core.last_emitted[event.track_id], current_time)
 
-    @patch.object(EventStreamARGUSCore, "process_frame_async")
+    @patch.object(EventStreamNQvisionCore, "process_frame_async")
     async def test_process_frame_and_emit_events(self, mock_process_frame):
         tracked_obj = TrackedObject(
             track_id=1, bbox=(0, 0, 10, 10), class_id=0, confidence=0.9
