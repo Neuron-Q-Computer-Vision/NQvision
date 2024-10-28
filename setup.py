@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="NQvision",
-    version="0.1.1",
+    version="0.1.2",
     author="Neuron Q",
     author_email="debbichi.raki@neuronq.io",
     description="A library to simplify the development of AI-driven object detection and monitoring solutions.",
