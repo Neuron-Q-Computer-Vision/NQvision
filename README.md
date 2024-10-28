@@ -1,5 +1,7 @@
 # NQvision
 
+![Alt text](assets/NQ.jpeg)
+
 NQvision is a powerful library built around Ultralytics models in ONNX format, designed to simplify the development of AI-driven object detection and tracking solutions. It transforms complex computer vision capabilities into an accessible, production-ready solution that revolutionizes how organizations approach real-time monitoring and security.
 
 ## 🚀 Features
