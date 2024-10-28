@@ -1,0 +1,13 @@
+LICENCE
+README.md
+setup.py
+NQvision/__init__.py
+NQvision/core.py
+NQvision/events.py
+NQvision.egg-info/PKG-INFO
+NQvision.egg-info/SOURCES.txt
+NQvision.egg-info/dependency_links.txt
+NQvision.egg-info/requires.txt
+NQvision.egg-info/top_level.txt
+tests/test_core.py
+tests/test_events.py
