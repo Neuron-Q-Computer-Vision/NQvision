@@ -1,0 +1,26 @@
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+.eggs/
+
+# IDE files (optional)
+.vscode/
+.idea/
+
+# OS files (optional)
+.DS_Store
+Thumbs.db
