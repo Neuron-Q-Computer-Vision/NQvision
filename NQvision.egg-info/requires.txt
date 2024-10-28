@@ -1,8 +1,0 @@
-numpy
-opencv-python
-Pillow
-deep_sort_realtime
-torch
-torchvision
-vidgear
-numba
