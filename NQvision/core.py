@@ -6,13 +6,12 @@ import numpy as np
 import cv2
 from deep_sort_realtime.deepsort_tracker import DeepSort
 import logging
-import csv
 from datetime import datetime
 import onnxruntime as ort
 import os
 from PIL import Image
 from pathlib import Path
-import numba
+
 
 # Configure logging
 logging.basicConfig(
